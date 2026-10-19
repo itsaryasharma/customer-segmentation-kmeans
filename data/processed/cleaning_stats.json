@@ -1,0 +1,43 @@
+{
+  "cleaning_steps": [
+    {
+      "step": "Raw transaction lines",
+      "rows": 541909,
+      "removed": 0
+    },
+    {
+      "step": "Drop lines without a CustomerID (cannot be linked to a customer)",
+      "rows": 406829,
+      "removed": 135080
+    },
+    {
+      "step": "Drop cancellations (invoice number starts with 'C')",
+      "rows": 397924,
+      "removed": 8905
+    },
+    {
+      "step": "Drop non-positive quantity or price",
+      "rows": 397884,
+      "removed": 40
+    },
+    {
+      "step": "Drop non-product codes (postage, fees, discounts, adjustments)",
+      "rows": 396337,
+      "removed": 1547
+    },
+    {
+      "step": "Drop exact duplicate lines",
+      "rows": 391150,
+      "removed": 5187
+    }
+  ],
+  "date_range": [
+    "2010-12-01 08:26:00",
+    "2011-12-09 12:50:00"
+  ],
+  "snapshot_date": "2011-12-10",
+  "n_customers": 4334,
+  "n_invoices": 18402,
+  "total_revenue": 8737227.64,
+  "uk_customer_share": 0.9035532994923858
+}

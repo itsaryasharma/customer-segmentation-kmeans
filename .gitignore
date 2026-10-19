@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Raw dataset (23 MB zip) is downloaded by `python -m src.data`. The derived
+# customer-level RFM table in data/processed/ IS committed (CC BY 4.0, small).
+# See docs/DATA_SOURCES.md.
+data/raw/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Personal study and presentation notes (kept locally, never published)
+private_notes/
+
+
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example

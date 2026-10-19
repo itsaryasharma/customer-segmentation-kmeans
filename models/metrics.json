@@ -1,0 +1,294 @@
+{
+  "trained_at_utc": "2026-10-19T12:05:23+00:00",
+  "sklearn_version": "1.9.1",
+  "data": {
+    "cleaning_steps": [
+      {
+        "step": "Raw transaction lines",
+        "rows": 541909,
+        "removed": 0
+      },
+      {
+        "step": "Drop lines without a CustomerID (cannot be linked to a customer)",
+        "rows": 406829,
+        "removed": 135080
+      },
+      {
+        "step": "Drop cancellations (invoice number starts with 'C')",
+        "rows": 397924,
+        "removed": 8905
+      },
+      {
+        "step": "Drop non-positive quantity or price",
+        "rows": 397884,
+        "removed": 40
+      },
+      {
+        "step": "Drop non-product codes (postage, fees, discounts, adjustments)",
+        "rows": 396337,
+        "removed": 1547
+      },
+      {
+        "step": "Drop exact duplicate lines",
+        "rows": 391150,
+        "removed": 5187
+      }
+    ],
+    "date_range": [
+      "2010-12-01 08:26:00",
+      "2011-12-09 12:50:00"
+    ],
+    "snapshot_date": "2011-12-10",
+    "n_customers": 4334,
+    "n_invoices": 18402,
+    "total_revenue": 8737227.64,
+    "uk_customer_share": 0.9035532994923858
+  },
+  "k_evaluation": [
+    {
+      "k": 2,
+      "inertia": 6469.8063604082645,
+      "silhouette": 0.43276897402565906,
+      "davies_bouldin": 0.8903830722685531,
+      "calinski_harabasz": 4373.792977323545
+    },
+    {
+      "k": 3,
+      "inertia": 4850.075070725839,
+      "silhouette": 0.3382212666228124,
+      "davies_bouldin": 1.041102648206632,
+      "calinski_harabasz": 3639.783209514571
+    },
+    {
+      "k": 4,
+      "inertia": 3918.8186228727955,
+      "silhouette": 0.3361011336713718,
+      "davies_bouldin": 1.0176782959580613,
+      "calinski_harabasz": 3345.445045007898
+    },
+    {
+      "k": 5,
+      "inertia": 3262.3831795809137,
+      "silhouette": 0.31818358545379294,
+      "davies_bouldin": 0.982942556848907,
+      "calinski_harabasz": 3230.993454954148
+    },
+    {
+      "k": 6,
+      "inertia": 2835.9221462586856,
+      "silhouette": 0.31336302844783265,
+      "davies_bouldin": 1.013750741645089,
+      "calinski_harabasz": 3102.9772553736193
+    },
+    {
+      "k": 7,
+      "inertia": 2528.028611556663,
+      "silhouette": 0.3040947971883507,
+      "davies_bouldin": 0.9891827920012408,
+      "calinski_harabasz": 2987.9241990465453
+    },
+    {
+      "k": 8,
+      "inertia": 2326.6618147243653,
+      "silhouette": 0.2970095005166972,
+      "davies_bouldin": 1.0149860915488793,
+      "calinski_harabasz": 2835.5963151048663
+    },
+    {
+      "k": 9,
+      "inertia": 2146.5712538626144,
+      "silhouette": 0.2809343792799623,
+      "davies_bouldin": 1.0214932101371057,
+      "calinski_harabasz": 2733.999440865889
+    },
+    {
+      "k": 10,
+      "inertia": 1987.6813535262936,
+      "silhouette": 0.27678221683841076,
+      "davies_bouldin": 1.027582383935148,
+      "calinski_harabasz": 2662.2988411164342
+    }
+  ],
+  "chosen_k": 4,
+  "k_rule": "Among k = 3..6, the largest k whose silhouette score is within 0.01 of the best. k = 2 has the highest silhouette overall, but it is excluded because a two-way split is too coarse for distinct marketing actions; more than 6 segments is hard to act on. Elbow, Davies-Bouldin and Calinski-Harabasz are reported as supporting evidence. Choosing k is a judgement call, not an objective optimum.",
+  "chosen": {
+    "k": 4,
+    "inertia": 3918.8186228727955,
+    "silhouette": 0.3361011336713718,
+    "davies_bouldin": 1.0176782959580613,
+    "calinski_harabasz": 3345.445045007898
+  },
+  "stability": {
+    "mean_ari": 0.9701416815544149,
+    "min_ari": 0.946848127122064,
+    "n_seeds": 10
+  },
+  "subsample_stability": {
+    "mean_ari": 0.9234907218740892,
+    "min_ari": 0.8715512580312049,
+    "n_subsamples": 20,
+    "fraction": 0.8
+  },
+  "segments": [
+    {
+      "rank": 0,
+      "name": "Champions",
+      "description": "Bought very recently, order often and spend the most.",
+      "action": "Reward and retain: loyalty perks, early access to new products, ask for reviews or referrals. Avoid unnecessary discounts; these customers already buy at full price.",
+      "customers": 699,
+      "customer_share": 0.16128287955699122,
+      "revenue": 5625297.619999999,
+      "revenue_share": 0.6438309555134812,
+      "median": {
+        "recency": 9.0,
+        "frequency": 10.0,
+        "monetary": 3683.26
+      },
+      "mean": {
+        "recency": 12.30901287553648,
+        "frequency": 13.791130185979972,
+        "monetary": 8047.636080114448
+      }
+    },
+    {
+      "rank": 1,
+      "name": "Regular mid-value",
+      "description": "Buy at an average pace with moderate to good spend.",
+      "action": "Grow: cross-sell related products, bundles and volume offers to raise order frequency or basket size.",
+      "customers": 1159,
+      "customer_share": 0.26742039686202124,
+      "revenue": 2093942.96,
+      "revenue_share": 0.23965759463719316,
+      "median": {
+        "recency": 53.0,
+        "frequency": 4.0,
+        "monetary": 1358.74
+      },
+      "mean": {
+        "recency": 66.99482312338223,
+        "frequency": 4.173425366695427,
+        "monetary": 1806.6807247627264
+      }
+    },
+    {
+      "rank": 2,
+      "name": "New or occasional",
+      "description": "Bought fairly recently, but few and small orders so far.",
+      "action": "Develop: welcome/onboarding e-mails, product recommendations and a second-purchase incentive to turn a first order into a habit.",
+      "customers": 878,
+      "customer_share": 0.2025842178126442,
+      "revenue": 453195.61,
+      "revenue_share": 0.0518694978170444,
+      "median": {
+        "recency": 19.0,
+        "frequency": 2.0,
+        "monetary": 439.545
+      },
+      "mean": {
+        "recency": 20.623006833712985,
+        "frequency": 2.0387243735763096,
+        "monetary": 516.1681207289294
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Lapsed low-value",
+      "description": "Few, small orders and no recent purchase.",
+      "action": "Low-cost reactivation only (e.g. an occasional newsletter). Avoid expensive campaigns until they show renewed interest.",
+      "customers": 1598,
+      "customer_share": 0.36871250576834336,
+      "revenue": 564791.45,
+      "revenue_share": 0.06464195203228103,
+      "median": {
+        "recency": 182.0,
+        "frequency": 1.0,
+        "monetary": 299.68
+      },
+      "mean": {
+        "recency": 187.53817271589486,
+        "frequency": 1.3360450563204005,
+        "monetary": 353.4364518147684
+      }
+    }
+  ],
+  "centroids": [
+    {
+      "name": "Champions",
+      "recency": 8.120914872153973,
+      "frequency": 10.990086374466145,
+      "monetary": 4227.763782145849,
+      "z": [
+        -1.2604698800052154,
+        1.675860502706533,
+        1.4138257102177845
+      ]
+    },
+    {
+      "name": "Regular mid-value",
+      "recency": 51.289749749413254,
+      "frequency": 3.8933105764611273,
+      "monetary": 1419.517613813794,
+      "z": [
+        0.07516891981060138,
+        0.3611977806096889,
+        0.5445030832648623
+      ]
+    },
+    {
+      "name": "New or occasional",
+      "recency": 16.010018906874244,
+      "frequency": 1.8809524239380742,
+      "monetary": 413.65073480744377,
+      "z": [
+        -0.7837782290771526,
+        -0.4158960788033993,
+        -0.43674465733373025
+      ]
+    },
+    {
+      "name": "Lapsed low-value",
+      "recency": 158.40266628956007,
+      "frequency": 1.2730777124615544,
+      "monetary": 271.8748421090789,
+      "z": [
+        0.9277181518196084,
+        -0.7635339711370608,
+        -0.7701837816605227
+      ]
+    }
+  ],
+  "overall_median": {
+    "recency": 51.0,
+    "frequency": 2.0,
+    "monetary": 662.565
+  },
+  "ranges": {
+    "recency": [
+      1.0,
+      374.0
+    ],
+    "frequency": [
+      1.0,
+      206.0
+    ],
+    "monetary": [
+      3.75,
+      279138.02
+    ]
+  },
+  "limits": {
+    "recency": [
+      1,
+      3650
+    ],
+    "frequency": [
+      1,
+      10000
+    ],
+    "monetary": [
+      0.01,
+      10000000.0
+    ]
+  },
+  "random_state": 42
+}
