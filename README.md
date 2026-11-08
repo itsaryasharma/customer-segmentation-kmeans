@@ -1,3 +1,12 @@
+## Internship Details
+
+- **Company:** CODTECH IT SOLUTIONS PRIVATE LIMITED
+- **Name:** Arya Kumar
+- **Intern ID:** CITS9801
+- **Domain:** Artificial Intelligence
+- **Duration:** 4 Weeks
+- **Mentor:** Neela Santosh
+
 # 👥 Customer Segmentation with K-Means
 
 A customer-analytics application that groups **4,334 real online-retail customers** into segments by
